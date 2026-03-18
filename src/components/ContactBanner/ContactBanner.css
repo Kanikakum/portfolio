@@ -1,0 +1,21 @@
+.contact-banner {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--accent-bg);
+  border-radius: 12px;
+  margin: 40px 20px;
+}
+
+.contact-banner h2 {
+  margin-bottom: 10px;
+}
+
+.contact-btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: var(--accent);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+}
