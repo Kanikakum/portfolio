@@ -1,63 +1,11 @@
+/* Home page container styles */
 .home-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-.hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 60vh;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(45deg, #646cff, #535bf2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-    font-size: 1.5rem;
-    color: #888;
-    margin-bottom: 2.5rem;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.btn {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn.primary {
-    background-color: #646cff;
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #535bf2;
-}
-
-.btn.secondary {
-    background-color: transparent;
-    border: 1px solid #646cff;
-    color: #646cff;
-}
-
-.btn.secondary:hover {
-    background-color: #646cff;
-    color: white;
+/* Sections on home skip the margin if stacked */
+.home-container > section {
+  width: 100%;
 }

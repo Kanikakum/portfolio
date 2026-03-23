@@ -1,52 +1,95 @@
-.projects-section {
-    padding: 6rem 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+.projects-page-section {
+  position: relative;
 }
 
-.projects-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    color: #646cff;
+.projects-full-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 60px;
 }
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+.project-feature-card {
+  display: flex;
+  padding: 0;
+  overflow: hidden;
+  min-height: 350px;
 }
 
-.project-card {
-    padding: 2.5rem;
-    background-color: #0d0a0a;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-align: left;
+.feature-img-placeholder {
+  flex: 1;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(59, 130, 246, 0.2));
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+.feature-badge {
+  padding: 6px 14px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--glass-border);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-main);
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
-.project-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #faf8f8;
+.feature-content {
+  flex: 1.5;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
+.feature-tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-.btn.demo {
-    background-color: #646cff;
-    color: white;
-    padding: 0.5rem 1rem;
+.tag-item {
+  font-size: 0.75rem;
+  color: var(--primary-light);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
-.btn.demo:hover {
-    background-color: #535bf2;
+.feature-content h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.feature-content p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  flex: 1;
+}
+
+.feature-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-premium.small {
+  padding: 8px 18px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .project-feature-card {
+    flex-direction: column;
+  }
+  
+  .feature-img-placeholder {
+    height: 200px;
+  }
 }
