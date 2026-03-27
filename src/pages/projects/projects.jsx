@@ -1,10 +1,15 @@
 import React from 'react';
+import weather from "../../assets/weatherr.png";
+import qrcode from "../../assets/qrcode.png";
+import portfolio from "../../assets/portfolio.png";
+
 import './projects.css';
 
 const Projects = () => {
     const projectList = [
         { 
-            id: 1, 
+            id: 1,
+            image: weather,
             title: 'Weather Forecast App', 
             desc: 'Built a web-based weather app that fetches real-time API data and displays temperature, humidity, and weather conditions with a clean and responsive UI.', 
             url: 'https://github.com/Kanikakum/weather-forecast-app.git',
@@ -13,6 +18,7 @@ const Projects = () => {
         },
         { 
             id: 2, 
+            image: qrcode,
             title: 'QRCode Generator', 
             desc: 'Built a QR Code Generator using Node.js and Express.js that generates QR codes for text or URLs with efficient backend processing and a clean UI.', 
             url: 'https://github.com/Kanikakum/QRcode-Generator.git',
@@ -20,7 +26,8 @@ const Projects = () => {
             category: "Utility Tool"
         },
         { 
-            id: 3, 
+            id: 3,
+            image: portfolio, 
             title: 'Portfolio', 
             desc: 'Built a personal portfolio website using React to showcase my skills, projects, and experience with a modern and responsive design.', 
             url: 'https://github.com/Kanikakum/portfolio.git',
@@ -42,6 +49,11 @@ const Projects = () => {
                     {projectList.map((project) => (
                         <div key={project.id} className="project-feature-card glass-card">
                             <div className="feature-img-placeholder">
+                                 <img 
+                                    src={project.image} 
+                                    alt={project.title} 
+                                    className="feature-image"
+                                 />
                                 <div className="feature-badge">{project.category}</div>
                             </div>
                             <div className="feature-content">

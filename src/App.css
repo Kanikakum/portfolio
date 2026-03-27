@@ -7,3 +7,12 @@
 .content {
   flex: 1;
 }
+body.light {
+  background: white;
+  color: black;
+}
+
+body.dark {
+  background: #121212;
+  color: white;
+}

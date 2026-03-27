@@ -2,29 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color System - Premium Dark Palette */
-  --bg-darker: #050508;
-  --bg-dark: #0a0a0f;
-  --bg-glass: rgba(10, 10, 15, 0.7);
-  
+  /* Constant colors across themes */
   --primary: #8b5cf6;
   --primary-light: #a78bfa;
   --primary-dark: #6d28d9;
   --secondary: #3b82f6;
   --accent: #f472b6;
-  
+
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+body.dark {
+  --bg-darker: #050508;
+  --bg-dark: #0a0a0f;
+  --bg-glass: rgba(13, 14, 21, 0.7);
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
-  
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  
-  --font-heading: 'Space Grotesk', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  
-  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-fast: all 0.2s ease;
+  --mesh-opacity: 0.15;
+  --card-hover-bg: rgba(255, 255, 255, 0.05);
+}
+
+body.light {
+  --bg-darker: #f8fafc;
+  --bg-dark: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.8);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+  --mesh-opacity: 0.05;
+  --card-hover-bg: rgba(0, 0, 0, 0.02);
 }
 
 * {
@@ -60,16 +75,19 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background: 
-    radial-gradient(circle at 0% 0%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
-    radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 100% 100%, rgba(244, 114, 182, 0.1) 0%, transparent 40%),
-    radial-gradient(circle at 0% 100%, rgba(139, 92, 246, 0.1) 0%, transparent 40%);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(139, 92, 246, var(--mesh-opacity)) 0%, transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(59, 130, 246, var(--mesh-opacity)) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(244, 114, 182, var(--mesh-opacity)) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(139, 92, 246, var(--mesh-opacity)) 0%, transparent 40%);
   filter: blur(100px);
 }
 
 /* Typography Hub */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }
@@ -84,7 +102,9 @@ h1, h2, h3, h4 {
 }
 
 @keyframes shine {
-  to { background-position: 200% center; }
+  to {
+    background-position: 200% center;
+  }
 }
 
 /* Premium Components */
@@ -138,14 +158,14 @@ h1, h2, h3, h4 {
 }
 
 .btn-premium.outline:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-hover-bg);
   border-color: var(--primary-light);
   transform: translateY(-2px);
 }
 
 /* Layout Utilities */
 .section-padding {
-  padding: 100px 5%;
+  padding: 60px 5%;
 }
 
 .container {
@@ -175,4 +195,48 @@ h1, h2, h3, h4 {
   .section-padding {
     padding: 60px 4%;
   }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 480px) {
+
+  /* Reduce base font size */
+  body {
+    font-size: 14px;
+  }
+
+  /* Headings smaller */
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Section padding smaller */
+  .section-padding {
+    padding: 40px 5%;
+  }
+
+  /* Container padding */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Buttons full width */
+  .btn-premium {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }

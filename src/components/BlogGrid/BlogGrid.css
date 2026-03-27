@@ -1,5 +1,5 @@
 .blogs-section {
-  padding: 100px 0;
+  padding: 40px 0;
   position: relative;
 }
 
@@ -12,13 +12,17 @@
 .blog-card {
   display: flex;
   flex-direction: column;
-  padding: 32px;
-  background: rgba(13, 14, 21, 0.4);
+  padding: 20px;
+  background: var(--bg-glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
   transition: var(--transition-smooth);
 }
 
 .blog-card:hover {
-  background: rgba(13, 14, 21, 0.6);
+  background: var(--card-hover-bg);
+  border-color: var(--primary-light);
   transform: translateY(-5px);
 }
 
@@ -43,7 +47,7 @@
 }
 
 .blog-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--text-main);
@@ -85,4 +89,9 @@
 .read-more-btn:hover {
   color: var(--primary-light);
   gap: 12px;
+}
+@media (max-width: 480px) {
+  .blog-grid-container {
+    grid-template-columns: 1fr;
+  }
 }

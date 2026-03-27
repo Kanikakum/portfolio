@@ -1,5 +1,5 @@
 .projects-section {
-  padding: 100px 0;
+  padding: 40px 0;
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 
 .project-grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px;
 }
 
@@ -32,13 +32,18 @@
   flex-direction: column;
   padding: 24px;
   min-height: 400px;
+  height: 100%;
   border-radius: 24px;
-  background: rgba(13, 14, 21, 0.5);
+  background: var(--bg-glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   transition: var(--transition-smooth);
 }
 
 .project-premium-card:hover {
-  background: rgba(13, 14, 21, 0.7);
+  background: var(--card-hover-bg);
+  border-color: var(--primary-light);
   transform: translateY(-8px) scale(1.02);
 }
 
@@ -54,11 +59,24 @@
   overflow: hidden;
 }
 
+.project-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-content {
+  flex: 1;   /* ✅ pushes footer down */
+}
+
 .project-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain; */
+  border-radius: 16px;
+  background-color: #0d0e15;
+
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); */
 }
 
 .project-tags {
@@ -72,10 +90,16 @@
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.03);
-  padding: 4px 10px;
-  border-radius: 6px;
+  background: var(--card-hover-bg);
+  padding: 4px 12px;
+  border-radius: 8px;
   border: 1px solid var(--glass-border);
+  transition: var(--transition-fast);
+}
+
+.project-tag:hover {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
 }
 
 .project-premium-card h3 {
@@ -94,7 +118,7 @@
 }
 
 .project-footer {
-  margin-top: auto;
+  margin-top: 20px;
 }
 
 .btn-link {
@@ -122,4 +146,7 @@
   .project-grid-container {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 480px) {
+  /* mobile fixes here */
 }

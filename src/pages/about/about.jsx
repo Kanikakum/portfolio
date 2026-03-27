@@ -52,7 +52,7 @@ I am an enthusiastic Computer Science student pursuing B.Tech (2022–2026) with
                         </div>
                         <div className="bio-footer">
                             <a href="/contact" className="btn-premium primary">Contact Me</a>
-                            <a href="#" className="btn-premium outline">Download CV</a>
+                            <a href="/resume.pdf" className="btn-premium outline">Download CV</a>
                         </div>
                     </div>
                     

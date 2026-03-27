@@ -96,8 +96,17 @@
 }
 
 @keyframes pulse-dot-contact {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.4); opacity: 0.5; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
 }
 
 .contact-form-premium {
@@ -123,7 +132,7 @@
   margin-bottom: 8px;
 }
 
-.form-group input, 
+.form-group input,
 .form-group textarea {
   width: 100%;
   padding: 14px 20px;
@@ -135,7 +144,7 @@
   transition: var(--transition-fast);
 }
 
-.form-group input:focus, 
+.form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-light);

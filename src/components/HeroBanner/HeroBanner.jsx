@@ -4,7 +4,7 @@ import heroImg from "../../assets/hero-bg.png";
 
 function HeroBanner() {
   return (
-    <section className="hero-section">
+    <section className="hero-section" data-aos="fade-up">
       <div className="hero-container container">
         <div className="hero-content">
           <span className="badge">Welcome to my portfolio</span>

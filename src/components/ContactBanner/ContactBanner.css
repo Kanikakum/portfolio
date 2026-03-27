@@ -9,7 +9,11 @@
   align-items: center;
   padding: 80px 10%;
   border-radius: 40px;
-  background: linear-gradient(135deg, rgba(20, 20, 30, 0.7), rgba(40, 40, 60, 0.3));
+  background: var(--bg-glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--glass-shadow);
   overflow: hidden;
   position: relative;
 }
@@ -107,5 +111,18 @@
   .banner-visual {
     margin-top: 60px;
     height: 150px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-banner-card {
+    padding: 40px 5%;
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  .banner-subtitle {
+    font-size: 0.95rem;
   }
 }

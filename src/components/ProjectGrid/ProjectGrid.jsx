@@ -1,10 +1,15 @@
 import React from 'react';
+import travelImg from "../../assets/travel.png";
+import todoImg from "../../assets/todo.png"; 
+import tictactoeImg from "../../assets/tictactoe.png";
+
 import "./ProjectGrid.css";
 
 function ProjectGrid() {
   const projects = [
     {
       id: 1,
+      image: travelImg,
       title: "Landing page (Travel Platform)",
       desc: "Designed and developed a responsive travel landing page using HTML, CSS, and JavaScript, featuring an attractive UI, smooth navigation, and interactive elements to enhance user experience.",
       link: "https://github.com/Kanikakum/SCT_WD_1.git",
@@ -13,6 +18,7 @@ function ProjectGrid() {
     },
     {
       id: 2,
+      image: tictactoeImg,
       title: "Tic tac toe Game ",
       desc: "Developed a Tic Tac Toe game using HTML, CSS, and JavaScript with interactive gameplay, win detection logic, and a responsive user interface.",
       link: "https://github.com/Kanikakum/SCT_WD_3-tic-tac-toe-project-.git",
@@ -22,6 +28,7 @@ function ProjectGrid() {
     {
       id: 3,
       title: "To Do App",
+      image: todoImg,
       desc: "Built a dynamic To-Do app  with features like task creation, deletion, and state management, providing a simple and user-friendly experience.",
       link: "https://github.com/Kanikakum/SCT_WD_4.git",
       tags: ["HTML", "CSS", "JavaScript"],
@@ -32,35 +39,36 @@ function ProjectGrid() {
   return (
     <section className="projects-section section-padding" id="projects">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" data-aos="fade-up">
           <span className="badge">Portfolio</span>
           <h2 className="section-title">Selected <span className="gradient-text">Works</span></h2>
           <p className="section-subtitle">A collection of projects where design meets functionality.</p>
         </div>
-        
+
         <div className="project-grid-container">
           {projects.map((project) => (
-            <div key={project.id} className="project-premium-card glass-card">
-              <div className="project-visual" style={{ background: `linear-gradient(135deg, ${project.color}22, ${project.color}44)` }}>
-                <div className="project-icon" style={{ backgroundColor: project.color }}></div>
-              </div>
+            <div key={project.id} className="project-premium-card glass-card" data-aos="fade-up">
+              <div className="project-visual">
+                <img src={project.image} alt={project.title} className="project-icon" /></div>
               <div className="project-info">
+                <div className="project-content">
                 <div className="project-tags">
-                  {project.tags.map(tag => <span key={tag} className="project-tag">{tag}</span>)}
+                  {project.tags.map(tag => (<span key={tag} className="project-tag">{tag}</span>))}
                 </div>
                 <h3>{project.title}</h3>
                 <p>{project.desc}</p>
+                </div>
                 <div className="project-footer">
                   <a href={project.link} className="btn-link" target="_blank" rel="noopener noreferrer">
-                    View Project 
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                    View Project
+                    {/* <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7" /></svg> */}
                   </a>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        
+
         <div className="grid-cta">
           <a href="/projects" className="btn-premium outline">View All Projects</a>
         </div>

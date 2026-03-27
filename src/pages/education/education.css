@@ -143,3 +143,40 @@
     right: auto !important;
   }
 }
+
+@media (max-width: 480px) {
+  .education-timeline-container {
+    padding: 20px 0;
+  }
+  
+  .timeline-line {
+    left: 15px;
+  }
+  
+  .education-item {
+    padding-left: 45px;
+  }
+  
+  .education-item.right {
+    padding-left: 45px;
+  }
+  
+  .timeline-node {
+    left: 7px !important;
+    width: 14px;
+    height: 14px;
+    top: 25px;
+  }
+  
+  .education-card {
+    padding: 20px;
+  }
+  
+  .institution-name {
+    font-size: 1.2rem;
+  }
+  
+  .degree-title {
+    font-size: 1rem;
+  }
+}

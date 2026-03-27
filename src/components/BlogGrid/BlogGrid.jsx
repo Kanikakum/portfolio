@@ -33,11 +33,11 @@ function BlogGrid() {
     <section className="blogs-section section-padding">
       <div className="container">
         <div className="section-header">
-          <span className="badge">Knowledge Hub</span>
+          <span className="badge" style={{ marginTop: "auto", marginBottom: "10px" }}>Knowledge Hub</span>
           <h2 className="section-title">Latest <span className="gradient-text">Insights</span></h2>
           <p className="section-subtitle">Articles, guides, and thoughts on software development and design.</p>
         </div>
-        
+
         <div className="blog-grid-container">
           {blogs.map((blog) => (
             <article key={blog.id} className="blog-card glass-card">

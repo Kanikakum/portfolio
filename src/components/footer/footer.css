@@ -8,9 +8,22 @@
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 2fr 1.5fr;
+  grid-template-columns: repeat(auto-fit,minmax(220px, 1fr));
   gap: 60px;
   padding-bottom: 60px;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: none;
+}
+
+/* logo image */
+.footer-logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
 }
 
 .footer-logo {
@@ -182,5 +195,19 @@
     flex-direction: column;
     gap: 15px;
     text-align: center;
+  }
+}
+@media (max-width: 480px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .btn-icon {
+    width: 100%;
   }
 }

@@ -15,6 +15,27 @@
   transition: var(--transition-smooth);
 }
 
+.logo-img {
+  height: 45px;
+  /* Adjust this height to fit your navbar */
+  width: auto;
+  /* Maintains aspect ratio */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+  /* Slight pop effect when hovering */
+}
+
+/* Update this existing class to remove the text-specific styles */
+.navbar-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .navbar-logo a {
   font-family: var(--font-heading);
   font-size: 1.5rem;
@@ -63,12 +84,135 @@
   width: 100%;
 }
 
-@media (max-width: 768px) {
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cv-btn {
+  display: flex;
+}
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 5px;
+}
+
+.mobile-toggle .bar {
+  width: 25px;
+  height: 2px;
+  background: var(--text-main);
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 850px) {
   .navbar {
     padding: 15px 5%;
   }
-  
-  .navbar-links {
-    display: none; /* For simplicity I'll hide desktop links here, maybe add mobile menu later */
+
+  .cv-btn {
+    display: none; /* Hide download CV in navbar to save space, maybe add in menu */
   }
+
+  .mobile-toggle {
+    display: flex;
+    order: 3;
+    margin-left: 10px;
+  }
+
+  .navbar-actions {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-darker);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 80px 20px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  /* Hamburger Anim */
+  .mobile-toggle.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .mobile-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .mobile-toggle.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+     font-size: 1.25rem;
+  }
+}
+
+/* container */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+}
+
+/* hide checkbox */
+.theme-toggle input {
+  display: none;
+}
+
+/* slider background */
+.slider {
+  width: 50px;
+  height: 26px;
+  background: #1e293b;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* circle */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 3px;
+  left: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+/* ON state */
+.theme-toggle input:checked+.slider {
+  background: linear-gradient(45deg, #8b5cf6, #3b82f6);
+}
+
+/* move circle */
+.theme-toggle input:checked+.slider::before {
+  transform: translateX(24px);
 }

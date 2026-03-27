@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from "../../assets/portfolio.png";
 import './footer.css';
 
 const Footer = () => {
@@ -6,7 +7,10 @@ const Footer = () => {
         <footer className="footer-section">
             <div className="container footer-grid">
                 <div className="footer-brand">
-                    <h2 className="footer-logo">Kanika<span className="accent-dot">.</span></h2>
+                    <div className="footer-logo-container">
+                        <img src={logo} alt="Kanika Logo" className="footer-logo-img" />
+                        <h2 className="footer-logo">Kanika<span className="accent-dot">.</span></h2>
+                    </div>
                     <p className="footer-tagline">Frontend Developer Intern @ CodeQlik | Creating seamless digital solutions.</p>
                     <div className="social-pill-container">
                         <a href="https://github.com/kanikakum" className="social-pill" target="_blank" rel="noopener noreferrer">GitHub</a>
