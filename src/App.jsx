@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer/Footer';
-import Home from './pages/home/home';
-import About from './pages/about/about';
-import Projects from './pages/projects/projects';
-import Contact from './pages/contact/contact';
-import Education from './pages/education/education';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import Home from './pages/home/home.jsx';
+import About from './pages/about/about.jsx';
+import Projects from './pages/projects/projects.jsx';
+import Contact from './pages/contact/contact.jsx';
+import Education from './pages/education/education.jsx';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import './App.css';
@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     document.body.className = darkMode ? "dark" : "light";
     localStorage.setItem('portfolio-theme', JSON.stringify(darkMode));
-    
+
     AOS.init({
       duration: 1000,
       once: true,
