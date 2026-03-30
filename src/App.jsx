@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar.jsx';
-import Footer from './components/Footer/Footer.jsx';
-import Home from './pages/home/home.jsx';
-import About from './pages/about/about.jsx';
-import Projects from './pages/projects/projects.jsx';
-import Contact from './pages/contact/contact.jsx';
-import Education from './pages/education/education.jsx';
+import Navbar from '@/components/Navbar/Navbar.jsx';
+import Footer from '@/components/Footer/Footer.jsx';
+import Home from '@/pages/home/home.jsx';
+import About from '@/pages/about/about.jsx';
+import Projects from '@/pages/projects/projects.jsx';
+import Contact from '@/pages/contact/contact.jsx';
+import Education from '@/pages/education/education.jsx';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './App.css';
+import '@/App.css';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
