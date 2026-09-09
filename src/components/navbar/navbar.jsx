@@ -28,7 +28,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </ul>
             
             <div className="navbar-actions">
-                <a href="/resume.pdf" className="btn-premium outline cv-btn">Download CV</a>
+                <a href="/Kanika Kumawat Resume.pdf" className="btn-premium outline cv-btn">Download CV</a>
                 <div className="theme-toggle">
                     <input
                         type="checkbox"
